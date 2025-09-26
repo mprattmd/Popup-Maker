@@ -118,6 +118,12 @@ require_once __DIR__ . '/bootstrap.legacy.php';
  * This handles the main initialization logic.
  */
 require_once __DIR__ . '/bootstrap.php';
+/**
+ * Load Popup Maker Scheduling Module
+ */
+if ( file_exists( __DIR__ . '/includes/modules/scheduling/class-pum-scheduling.php' ) ) {
+    require_once __DIR__ . '/includes/modules/scheduling/class-pum-scheduling.php';
+}
 
 // Register activation, deactivation & uninstall hooks.
 register_activation_hook( __FILE__, [ 'PUM_Install', 'activate_plugin' ] );
